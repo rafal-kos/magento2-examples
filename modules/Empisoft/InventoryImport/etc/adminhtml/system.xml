@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        <section id="cataloginventory">
+			<tab>catalog</tab>
+			<resource>Empisoft_InventoryImport::config_empisoft_inventoryimport</resource>
+			<group id="sftp" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label">
+				<label>SFTP Configuration</label>
+				<field id="hostname" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Host</label>
+					<comment/>
+				</field>
+				<field id="username" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Username</label>
+					<comment/>
+				</field>
+				<field id="password" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="obscure">
+					<label>Password</label>
+					<comment/>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+				</field>
+				<field id="path" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Path</label>
+					<comment/>
+				</field>
+                <field id="frequency" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Frequency</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <backend_model>Empisoft\InventoryImport\Model\Config\Cron</backend_model>
+                </field>
+                <field id="time" translate="label comment" sortOrder="55" type="time" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start Time</label>
+                </field>
+			</group>
+		</section>
+	</system>
+</config>

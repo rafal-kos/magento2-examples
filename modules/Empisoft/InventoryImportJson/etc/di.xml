@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Empisoft\InventoryImport\Model\Import\AdapterList">
+        <arguments>
+            <argument name="adapters" xsi:type="array">
+                <item name="empisoft_json_adapter" xsi:type="object">Empisoft\InventoryImportJson\Model\Import\Source\JsonFactory</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
