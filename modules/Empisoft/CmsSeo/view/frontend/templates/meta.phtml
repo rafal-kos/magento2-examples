@@ -1,0 +1,9 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Empisoft\CmsSeo\ViewModel\CmsSeo $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+
+<?php if ($viewModel->isPageInStores()): ?>
+    <link rel="alternate" hreflang="<?= $viewModel->getStoreLanguage() ?>" href="<?= $viewModel->getPageUrl() ?>" />
+<?php endif ?>
