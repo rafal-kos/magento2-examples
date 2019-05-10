@@ -1,0 +1,13 @@
+{
+    "artist": {
+        "column": {
+            "artist_id": true,
+            "firstname": true,
+            "lastname": true,
+            "birthdate": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

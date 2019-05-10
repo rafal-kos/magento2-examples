@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="artist" resource="default" engine="innodb" comment="Artist Table">
+        <column xsi:type="smallint" name="artist_id" padding="6" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="firstname" nullable="false" length="255" comment="Artist Firstname"/>
+        <column xsi:type="varchar" name="lastname" nullable="false" length="255" comment="Artist Lastname"/>
+        <column xsi:type="datetime" name="birthdate" nullable="true" comment="Artist Birthdate" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="artist_id"/>
+        </constraint>
+    </table>
+</schema>

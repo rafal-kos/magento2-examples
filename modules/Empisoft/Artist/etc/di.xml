@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Empisoft\Artist\Api\ArtistRepositoryInterface" type="Empisoft\Artist\Model\ArtistRepository"/>
+    <preference for="Empisoft\Artist\Api\Data\ArtistInterface" type="Empisoft\Artist\Model\Artist"/>
+    <preference for="Empisoft\Artist\Api\Data\ArtistSearchResultInterface" type="Empisoft\Artist\Model\ArtistSearchResult"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="empisoft_artist_artist_listing_data_source" xsi:type="string">Empisoft\Artist\Model\ResourceModel\Artist\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Empisoft\Artist\Model\ResourceModel\Artist\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">artist</argument>
+            <argument name="eventPrefix" xsi:type="string">empisoft_artist_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">artist_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Empisoft\Artist\Model\ResourceModel\Artist</argument>
+        </arguments>
+    </type>
+</config>

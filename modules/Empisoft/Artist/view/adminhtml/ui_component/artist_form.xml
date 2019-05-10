@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">artist_form.artist_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Artist Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Empisoft\Artist\Block\Adminhtml\Artist\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Empisoft\Artist\Block\Adminhtml\Artist\Edit\SaveButton"/>
+            <button name="reset" class="Empisoft\Artist\Block\Adminhtml\Artist\Edit\ResetButton"/>
+            <button name="delete" class="Empisoft\Artist\Block\Adminhtml\Artist\Edit\DeleteButton"/>
+            <button name="back" class="Empisoft\Artist\Block\Adminhtml\Artist\Edit\BackButton"/>
+        </buttons>
+        <namespace>artist_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>artist_form.artist_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="artist_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="artist/artist/save"/>
+        </settings>
+        <dataProvider class="Empisoft\Artist\Model\Artist\DataProvider" name="artist_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>artist_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">artist</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+        <field name="firstname" sortOrder="5" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">artist</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Firstname</label>
+                <dataScope>firstname</dataScope>
+            </settings>
+        </field>
+        <field name="lastname" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">artist</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Lastname</label>
+                <dataScope>lastname</dataScope>
+            </settings>
+        </field>
+        <field name="birthdate" sortOrder="20">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="label" xsi:type="string" translate="true">Birthdate</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">artist</item>
+                    <item name="options" xsi:type="array">
+                        <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
