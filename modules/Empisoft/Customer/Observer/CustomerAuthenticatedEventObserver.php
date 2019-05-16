@@ -19,7 +19,7 @@ class CustomerAuthenticatedEventObserver implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         /** @var \Magento\Customer\Model\Customer $customer */
-        $customer = $observer->getEvent()->getModel();
+        $customer = $observer->getModel();
 
         if ((int)$customer->getActivated() !== 1) {
             throw new LocalizedException(__('Customer is not activated'));

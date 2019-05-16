@@ -9,13 +9,19 @@ use Magento\Framework\Exception\NoSuchEntityException;
 
 class GenericButton
 {
-    /** @var \Magento\Backend\Block\Widget\Context */
+    /**
+     * @var Context
+     */
     protected $context;
 
-    /** @var \Empisoft\Artist\Model\ResourceModel\Artist */
+    /**
+     * @var ResourceArtist
+     */
     protected $resource;
 
-    /** @var \Empisoft\Artist\Model\ArtistFactory */
+    /**
+     * @var ArtistFactory
+     */
     protected $artistFactory;
 
     /**
